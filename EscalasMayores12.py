@@ -183,6 +183,17 @@ class Escalas():
             return None
     
 
+def welcome():
+    #os.system('cls')
+    print("¡¡Bienvenido al generador de escalas MAYORES!!")
+    print("Para generar tu escala MAYOR debes ingresar el nombre de una nota cualquiera en notación americana (C,D,E,F,G,A,B). ")
+    print("Puedes agregar bemoles y sostenidos siguiendo el patron de generacion de escalas mayores dictado por el circulo de quintas. ")
+    print()
+    print()
+    print("Ante las dudas... prueba, prueba y prueba! ...¡COMENZEMOS!")
+    print()
+    print()
+
 def menu():
     #os.system('cls')
     print("Seleccione una opción. (Sostenidos = '#', Bemoles = 'b')")
@@ -195,7 +206,7 @@ def menu():
 def main():
     obj = Escalas()
 
-
+    welcome()
     while True:
 
         menu()
