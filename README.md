@@ -19,7 +19,7 @@ Pequeño programa en python que genera las 12 escalas mayores y sus respectivos 
 
 ## Interfaz de usuario
 
-```python
+```
 ¡¡Bienvenido al generador de escalas MAYORES!!
 Para generar tu escala MAYOR debes ingresar el nombre de una nota cualquiera en notación americana (C,D,E,F,G,A,B).
 Puedes agregar bemoles y sostenidos siguiendo el patron de generacion de escalas mayores dictado por el circulo de quintas.
@@ -36,7 +36,7 @@ Seleccione una opción. (Sostenidos = '#', Bemoles = 'b')
 ```
 
 ### Opcion 1
-```python
+```
 Ingrese una opcion: 1
 Ingrese el nombre de la nota para obtener una escala: C
 __________________Escala de C_________________
@@ -53,7 +53,7 @@ _______________________________________________
 ```
 
 ### Opcion 2
-```python
+```
 Ingrese una opcion: 2
 Ingrese el acorde para obtener sus primeras tres notas: C
 ['C', 'E', 'G']
@@ -66,7 +66,7 @@ Ingrese el acorde para obtener sus forma de triada: Cm
 ```
 
 ### Opcion 3
-```python
+```
 Ingrese una opcion: 3
 Ingrese el nombre de la nota para obtener una escala y sus acordes: C
 __________________Escala de C_________________
