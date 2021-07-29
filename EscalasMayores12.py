@@ -217,7 +217,7 @@ def main():
             obj.escaleFromNote(note_name)
 
         elif(option == '2'):
-            chord_name = input('Ingrese el acorde para obtener sus primeras tres notas: ')
+            chord_name = input('Ingrese el acorde para obtener sus forma de triada: ')
             chord = obj.notesFromChord(chord_name)
             print(chord)
 

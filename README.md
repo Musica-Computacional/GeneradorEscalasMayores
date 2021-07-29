@@ -57,6 +57,12 @@ _______________________________________________
 Ingrese una opcion: 2
 Ingrese el acorde para obtener sus primeras tres notas: C
 ['C', 'E', 'G']
+
+...
+
+Ingrese una opcion: 2
+Ingrese el acorde para obtener sus forma de triada: Cm
+['C', 'D#', 'G']
 ```
 
 ### Opcion 3
