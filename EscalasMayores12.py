@@ -83,7 +83,9 @@ class Escalas():
                 scale.append(self.circulo_quintas_menores[index])
                 scale.append(self.circulo_quintas_menores[index+2])
 
-            
+            print()
+            print('_______________________________________________')
+            print('-----------------------------------------------')
             if sharp:
                 arranged_scale = []
                 for chord in scale:
@@ -101,25 +103,30 @@ class Escalas():
                     else:
                         print(self.romanNumbers.get(c+1) + ': ' + arranged_scale[c] )
                 #return arranged_scale
-            else:
+            else: #aca es bemol
+                arranged_scale = []
+                for chord in scale:
+                    if('#' in chord):
+                        arranged_scale.append(self.sharpsNflats.get(chord))
+                    else:
+                        arranged_scale.append(chord)
                 #last_chord = scale.pop(len(scale)-1)
                 #last_diminish_chord = last_chord +'(dim)'
                 #scale.append(last_diminish_chord)
-                for c in range(0,len(scale)):
-                    current_chord = scale[c]
-                    if '#' in current_chord:
-                            current_chord = self.sharpsNflats.get(current_chord)
-                            
+                for c in range(0,len(arranged_scale)):
                     if chords_too:
-                        print(self.romanNumbers.get(c+1) + ': ' + scale[c] + ' - ' + str(self.notesFromChord(scale[c])))
+                        print(self.romanNumbers.get(c+1) + ': ' + arranged_scale[c] + ' - ' + str(self.notesFromChord(arranged_scale[c],True)))
                     else:
-                        print(self.romanNumbers.get(c+1) + ': ' + scale[c] )
+                        print(self.romanNumbers.get(c+1) + ': ' + arranged_scale[c] )
                 #return scale
+            print('_______________________________________________')
+            print('-----------------------------------------------')
+            print()
         else:   
             print('That note does not exist!')
             return None
 
-    def notesFromChord(self,chord):
+    def notesFromChord(self,chord,flat_scale=False):
         # Eliminamos indicador de acorde menor, solo necesitamos el nombre, ya que la formula de la escala mayor
         # nos ayudara a construir cada acorde mayor o menor perteneciente a la escala en cuestion.
 
@@ -132,9 +139,13 @@ class Escalas():
             flat = True
         elif 'b' in chord:
             chord = self.get_sharp_from_flat(chord)
+            flat = True
         elif 'm' in chord:
             chord = chord.replace('m','') 
             minor = True
+
+        if flat_scale == True:
+            flat = True
 
         if chord in self.escalaCromatica:
             index = self.escalaCromatica.index(chord)
@@ -158,7 +169,10 @@ class Escalas():
             if flat:
                 arranged_chord_notes = []
                 for chord in chord_notes:
-                    arranged_chord_notes.append(self.sharpsNflats.get(chord))
+                    if '#' in chord:
+                        arranged_chord_notes.append(self.sharpsNflats.get(chord))
+                    else:
+                        arranged_chord_notes.append(chord)
                 return arranged_chord_notes
             else:
                 return chord_notes
@@ -169,7 +183,7 @@ class Escalas():
 
 def menu():
     #os.system('cls')
-    print("Seleccione una opcion.")
+    print("Seleccione una opción. (Sostenidos = '#', Bemoles = 'b')")
     print("\t1. Escala a partir de nota")
     print("\t2. Notas a partir de acorde")
     print("\t3. Escala y acordes a partir de nota")
