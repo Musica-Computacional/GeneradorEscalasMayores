@@ -46,6 +46,7 @@ class Escalas():
         return "El acorde # no existe"
 
     def escaleFromNote(self,note,chords_too=False):
+        scaleName = '__________________Escala de ' + note + '_________________'
         sharp = False
         if '#' in note:
             note = self.sharpsNflats.get(note)
@@ -83,8 +84,9 @@ class Escalas():
                 scale.append(self.circulo_quintas_menores[index])
                 scale.append(self.circulo_quintas_menores[index+2])
 
+            
             print()
-            print('_______________________________________________')
+            print(scaleName)
             print('-----------------------------------------------')
             if sharp:
                 arranged_scale = []
@@ -99,7 +101,7 @@ class Escalas():
                 #arranged_scale.append(last_diminish_chord)
                 for c in range(0,len(arranged_scale)):
                     if chords_too:
-                        print(self.romanNumbers.get(c+1) + ': ' + arranged_scale[c] + ' - ' + self.notesFromChord(arranged_scale[c]))
+                        print(self.romanNumbers.get(c+1) + ': ' + arranged_scale[c] + ' - ' + str(self.notesFromChord(arranged_scale[c])))
                     else:
                         print(self.romanNumbers.get(c+1) + ': ' + arranged_scale[c] )
                 #return arranged_scale
@@ -123,7 +125,7 @@ class Escalas():
             print('-----------------------------------------------')
             print()
         else:   
-            print('That note does not exist!')
+            print('No se puede generar una escala MAYOR a paritr de esa nota!')
             return None
 
     def notesFromChord(self,chord,flat_scale=False):
@@ -177,16 +179,16 @@ class Escalas():
             else:
                 return chord_notes
         else:
-            print('That note does not exist!')
+            print('La nota ingresada no existe! No se puede generar el acorde de triada.')
             return None
     
 
 def menu():
     #os.system('cls')
     print("Seleccione una opción. (Sostenidos = '#', Bemoles = 'b')")
-    print("\t1. Escala a partir de nota")
-    print("\t2. Notas a partir de acorde")
-    print("\t3. Escala y acordes a partir de nota")
+    print("\t1. Generar escala mayor a partir de nota base")
+    print("\t2. Mostrar triada a partir de especificació acorde")
+    print("\t3. Generar escala y acordes a partir de nota base ")
     print("\t4. Adios musical")
 
 
