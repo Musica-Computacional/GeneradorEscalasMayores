@@ -21,9 +21,13 @@ Pequeño programa en python que genera las 12 escalas mayores y sus respectivos 
 
 ```
 ¡¡Bienvenido al generador de escalas MAYORES!!
-Para generar tu escala MAYOR debes ingresar el nombre de una nota cualquiera en notación americana (C,D,E,F,G,A,B).
-Puedes agregar bemoles y sostenidos siguiendo el patron de generacion de escalas mayores dictado por el circulo de quintas.
-
+Para generar tu escala MAYOR debes ingresar el nombre de una nota cualquiera en notación americana (C,D,E,F,G,A,B) --> (DO,RE,MI,FA,SOL,LA,SI)
+Puedes agregar bemoles y sostenidos siguiendo el patrón de generación de escalas mayores dictado por el circulo de quintas. 
+------------------------------------------------------------------------------------------ 
+Lista de las 12 escalas mayores: 'C','C#','D','D#','E','F','F#','G','G#','A','A#','B'  
+Posibles combinaciones de acordes: 'D','Dm','D#m','Dbm'... para el acorde de RE o D. 
+------------------------------------------------------------------------------------------ 
+NOTA: VII° --> Quiere decir septimo acorde de la escala y es disminuido. Ej. C = C, E, G --> Cm(dim) = C, Eb, Gb
 
 Ante las dudas... prueba, prueba y prueba! ...¡COMENZEMOS!
 
@@ -31,7 +35,7 @@ Ante las dudas... prueba, prueba y prueba! ...¡COMENZEMOS!
 Seleccione una opción. (Sostenidos = '#', Bemoles = 'b')
         1. Generar escala mayor a partir de nota base
         2. Mostrar triada a partir de especificació acorde
-        3. Generar escala y acordes a partir de nota base
+        3. Generar escala y acordes a partir de nota base 
         4. Adios musical
 ```
 
@@ -55,14 +59,19 @@ _______________________________________________
 ### Opcion 2
 ```
 Ingrese una opcion: 2
-Ingrese el acorde para obtener sus primeras tres notas: C
-['C', 'E', 'G']
+Ingrese el acorde para obtener sus forma de triada: D
+['D', 'F#', 'A']
 
 ...
 
-Ingrese una opcion: 2
-Ingrese el acorde para obtener sus forma de triada: Cm
-['C', 'D#', 'G']
+Ingrese el acorde para obtener sus forma de triada: Dm
+['D', 'F', 'A']
+
+Ingrese el acorde para obtener sus forma de triada: D#
+['D#', 'G', 'A#']
+
+Ingrese el acorde para obtener sus forma de triada: D#m
+['D#', 'F#', 'A#']
 ```
 
 ### Opcion 3
