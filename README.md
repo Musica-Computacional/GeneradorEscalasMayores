@@ -15,7 +15,7 @@ Pequeño programa en python que genera las 12 escalas mayores y sus respectivos 
 
 ## Info
 
- - Version minima de python - 3.5
+ - Version de python - 3.8.5
 
 ## Interfaz de usuario
 
