@@ -14,7 +14,7 @@ class Escalas():
         self.circulo_quintas_menores = ['Am','Em','Bm','F#m','C#m','G#m','Ebm','Bbm','Fm','Cm','Gm','Dm']
         
         self.formulaEscalaMayor = [2,2,1,2,2,2,1]
-        self.escalaCromatica = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B',  'C','C#','D','D#','E','F','F#']
+        self.escalaCromatica = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B',  'C','C#','D','D#','E','F','F#','G','G#','A','A#','B']
 
         self.sharpsNflats = {
             'C#' :'Db',
@@ -30,13 +30,13 @@ class Escalas():
         }
 
         self.romanNumbers = {
-            1:'I   ',
-            2:'II  ',
-            3:'III ',
-            4:'IV  ',
-            5:'V   ',
-            6:'VI  ',
-            7:'VII°',
+            1:'I    Tonica          ',
+            2:'II   Subdominante    ',
+            3:'III  Tonica          ',
+            4:'IV   SubDominante    ',
+            5:'V    Dominante       ',
+            6:'VI   Tonica          ',
+            7:'VII° Sensible        ',
         }
 
     def get_sharp_from_flat(self,val):
@@ -48,9 +48,13 @@ class Escalas():
     def escaleFromNote(self,note,chords_too=False):
         scaleName = '__________________Escala de ' + note + '_________________'
         sharp = False
+        #flat = False
         if '#' in note:
             note = self.sharpsNflats.get(note)
             sharp = True
+        #if 'b' in note:
+        #    note = self.get_sharp_from_flat(note)
+        #    flat = True
 
         if note in self.circulo_quintas_mayores:
             index = self.circulo_quintas_mayores.index(note)
@@ -120,7 +124,8 @@ class Escalas():
                         print(self.romanNumbers.get(c+1) + ': ' + arranged_scale[c] + ' - ' + str(self.notesFromChord(arranged_scale[c],True)))
                     else:
                         print(self.romanNumbers.get(c+1) + ': ' + arranged_scale[c] )
-                #return scale
+           
+            #return scale
             print('_______________________________________________')
             print('-----------------------------------------------')
             print()
@@ -157,16 +162,20 @@ class Escalas():
                 first_note = 1 + index
                 third_note = 4 + index
                 fifth_note = 8 + index
+                seventh_note = 11 + index
                 chord_notes.append(self.escalaCromatica[first_note-1]) #-1 por corrimiento en array
                 chord_notes.append(self.escalaCromatica[third_note-1])
                 chord_notes.append(self.escalaCromatica[fifth_note-1])
+                chord_notes.append(self.escalaCromatica[seventh_note-1])
             else:
                 first_note = 1 + index
                 third_note = 5 + index
                 fifth_note = 8 + index
+                seventh_note = 12 + index
                 chord_notes.append(self.escalaCromatica[first_note-1])
                 chord_notes.append(self.escalaCromatica[third_note-1])
                 chord_notes.append(self.escalaCromatica[fifth_note-1])
+                chord_notes.append(self.escalaCromatica[seventh_note-1])
 
             if flat:
                 arranged_chord_notes = []
